@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const Joke = require("daddyjoke");
 const axios = require('axios');
 
+API_KEY = '';
+
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,7 +55,7 @@ app.get('/', async function(req, res) {
     url: 'https://api-nba-v1.p.rapidapi.com/standings',
     params: { league: 'standard', season: 2022, conference: conf },
     headers: {
-      'X-RapidAPI-Key': 'f7c4829970msh0c9ed3726d0da6ep1472eejsnbe870eba3fa1',
+      'X-RapidAPI-Key': API_KEY,
       'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
     }
   };
